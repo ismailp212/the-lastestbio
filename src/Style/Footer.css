@@ -1,0 +1,100 @@
+
+
+
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.cFooterWrapper {
+    width: 100%;
+    margin-top: 100px;
+     box-shadow: 0 0 75px rgba(40, 255, 51, 0.4); 
+     border-top: 2px solid  rgba(14, 97, 18, 0.4);
+     background-color:  rgba(40, 255, 51, 0.075);
+  }
+  
+  .cFooter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 110px 0 110px;
+  }
+  
+
+  .logox {
+    display: flex;
+    align-items: center;
+    margin-top: -7px;
+  }
+  
+  .logox img {
+    height: 3.5rem;
+  }
+
+.logox>span{
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+  
+  .block {
+    margin: 9px 10px;
+  }
+  
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .detail > span:first-child {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2rem;
+
+    
+  }
+
+  .detail > span:not(:first-child) {
+    margin-top: 12px; 
+    font-size: .7rem;
+    font-style: italic;
+    }
+
+  .pngLine {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .icon {
+    margin-right: 5px;
+    width: 25px;
+  }
+  
+  .copyRight {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #000000;
+    margin-bottom: 20px;
+    /* font-style: italic; */
+  }
+  
+  .copyRight span {
+    display: block;
+  }
+  
+  .copyRight span:first-child {
+    margin-bottom: 5px;
+  }
+  

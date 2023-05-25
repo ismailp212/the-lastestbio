@@ -1,0 +1,230 @@
+/* .slider-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.slider-images {
+  width: 100%;
+  height: 300px; 
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.slider-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-images img.active {
+  opacity: 1;
+}
+
+.slider-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slider-buttons button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 4px;
+  background-color: #ccc;
+}
+
+.slider-buttons button.active {
+  background-color: #333;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* .slider-overlay {
+  top:20px;
+  position: absolute;
+  width: 95%;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  z-index: 1;
+} */
+
+
+.slider-overlay {
+  position: absolute;
+  top: 0; /* Adjust the top position to position the overlay within the slider container */
+  left: 14px; /* Adjust the left position to position the overlay within the slider container */
+  width: 95%; /* Use 100% width to cover the entire slider container */
+  height: 560px; /* Use 100% height to cover the entire slider container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  z-index: 1;
+}
+
+.slider-overlay h2,
+.slider-overlay hr,
+.slider-overlay p ,
+.slider-overlay button{
+  margin: 0 0 0 60px;
+}
+
+.slider-overlay h2 {
+  font-size: 86px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  letter-spacing: 12px;
+  margin-left: 55px;
+  color: #ffffff;
+  
+}
+
+.slider-overlay h2>span{
+  font-family: 'Dancing Script';
+  margin-left: 10px;
+  font-size: 80px;
+  letter-spacing: normal;
+  color: #e1ffdd;
+}
+
+.slider-overlay hr {
+  width: 496px;
+  border: none;
+  border-top: 2px solid #47ff75;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.slider-overlay p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  width: 40%;
+  line-height: 180%;
+}
+
+.reservation-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-family: 'poppins';
+}
+
+.reservation-button:hover {
+  color: #fff;
+  background-color: #012900; /* Adjusted hover background color */
+}
+
+
+.slider-container {
+  position: relative; /* Add relative positioning to the slider container */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 180px;
+}
+
+.slider-images {
+  width: 98%;
+  height: 600px; /* Adjust the height as needed */
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-images img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider-images img.active {
+  opacity: 1;
+}
+
+.slider-images img.previous {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.slider-images img.next {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.slider-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slider-buttons button {
+  width: 12px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 8px;
+  border: 2px solid #9bdf94;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+  transform: scale(1); 
+  margin-top: 20px;
+
+}
+
+.slider-buttons button.active {
+  background-color: #024b00;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 0 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.2); 
+  margin-top: 20px;
+}
+
+.slider-buttons button.active:hover {
+  background-color: #024b00; 
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}

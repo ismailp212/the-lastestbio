@@ -17,15 +17,7 @@ function Slider(){
     spaceBetween={40}
     navigation={true}
     loop={true}
-    breakpoints={{
-        // when window width is >= 768px
-        768: {
-        slidesPerView: 3,
-        navigation: true,
-
-
-        }
-    }}
+    slidesPerView={3}
     >
     {SliderProducts.map((slide,i)=>(
         <SwiperSlide>
@@ -48,7 +40,6 @@ function Slider(){
 };
 
 export default Slider ;
-
 
 
 

@@ -1,11 +1,11 @@
 import React from "react";
 import '../Style/Header.css';
 import logox from '../images/logo-image/logo.jpg';
-
+import Testimonials from "./Testimonials";
 
 function Header(){
     return (
-
+ 
         <div className="header">
             <div className="logo">
                 <img src={logox} alt="" />
@@ -26,8 +26,6 @@ function Header(){
                 
             </div>
         </div>
-
-
 
 
 
