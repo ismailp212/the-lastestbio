@@ -4,28 +4,37 @@ import Slider from './Components/Slider';
 import Header from './Components/Header';
 import Hero from './Components/Hero';
 // import Slider from './Components/Slider';
-import InstruSectionww from './Components/InstruSectionww';
+import Collections from './Components/Collections';
 import ProductsFilter from './Components/ProductsFilter';
 import SpaSlider from './Components/SpaSlider';
 import Testimonials from './Components/Testimonials';
 import Footer from './Components/Footer';
 import './Style/scroll-bar.css';
+import Tablo from './Components/Tablo';
+import DataTest from './Components/DataTest';
 function App() {
  
     return (
       <div className="App">
+        
      <Header/>
       <Hero/> 
-      {/* <Slider/> */}
-      <InstruSectionww/>
+      <Collections/>
       <ProductsFilter/>
       <SpaSlider/>
       <Testimonials/>
-      {/* <Slider/> */}
       <Footer/>
-
+      {/* <Tablo/> */}
+      {/* <DataTest/> */}
+      {/* <Slider/> */}
     </div>
     );
 }
 
 export default App;
+
+
+
+
+
+

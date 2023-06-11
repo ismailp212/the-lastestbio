@@ -1,52 +1,71 @@
-import {React , useState} from "react";
-import {ProductsData} from '../data/products';
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import '../Style/ProductsFilter.css'
-import {useAutoAnimate} from "@formkit/auto-animate/react"
+import { useAutoAnimate } from "@formkit/auto-animate/react"
 import Plane from '../assets/plane.png';
 
-function ProductsFilter(){
+function ProductsFilter() {
     const [parent] = useAutoAnimate()
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [products, setProducts] = useState([]);
 
 
-    const[MenuProducts , setMenuProducts]= useState(ProductsData)
-    
-    const filter = (type) => {
-        setMenuProducts(ProductsData.filter((product)=>product.type === type))
-    }    
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-    return(
-       <div className="FilterProducts">
-        <div className="container">
-            <img src={Plane} alt=""  className="title-ing-prod-filter"/>
-            <h1>Our Featured Products</h1>
-            <div className="products">
-                <ul className="menu">
-                    <li onClick={()=>setMenuProducts(ProductsData)} style={{color:'green'}}>All</li>
-                    <li onClick={()=>filter("skin care")}>Skin Care</li>
-                    <li onClick={()=>filter("conditioner")}>Conditionners</li>
-                    <li onClick={()=>filter("foundation")}>Foundations</li>
-                </ul>
-            
-            <div className="list" ref={parent}>
-                {
-                    MenuProducts.map((product,i)=>(
-                        <div className="product">
-                            <div className="left-si">
-                                <div className="name">
-                                    <span>{product.name}</span>
-                                    <span>{product.detail}</span>
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost:8000/api/add_product');
+            setProducts(response.data);
+            setFilteredProducts(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const filter = (category) => {
+        if (category === "All") {
+            setFilteredProducts(products); 
+        } else {
+            const filtered = products.filter((product) => product.category === category);
+            setFilteredProducts(filtered);
+        }
+    }
+
+    return (
+        <div className="FilterProducts">
+            <div className="container">
+                <img src={Plane} alt="" className="title-ing-prod-filter" />
+                <h1>Our Featured Products</h1>
+                <div className="products">
+                    <ul className="menu">
+                        <li onClick={() => filter("All")} style={{ color: 'green' }}>All</li>
+                        <li onClick={() => filter("Miel")}>Les Miels</li>
+                        <li onClick={() => filter("Crème")}>Les Crèmes</li>
+                        <li onClick={() => filter("Huile")}>Les Huiles</li>
+                        <li onClick={() => filter("poudre")}>Les poudres</li>
+                    </ul>
+                    <div className="list" ref={parent}>
+                        {
+                            filteredProducts.map((product, i) => (
+                                <div className="product" key={i}>
+                                    <div className="left-si">
+                                        <div className="name">
+                                            <span>{product.category}</span>
+                                            <span>{product.titre}</span>
+                                        </div>
+                                        <span>{product.actual_price}$</span>
+                                        <div> <a href="">Shop Now</a></div>
+                                    </div>
+                                    <img src={product.image} alt="" className="img-p" />
                                 </div>
-                                <span>{product.price}$</span>
-                                <div> <a href="">Shop Now</a></div>
-                            </div>
-                            <img src={product.img} alt="" className="img-p"/>
-                        </div>
-                    ))   
-                }
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
     )
 }
 
