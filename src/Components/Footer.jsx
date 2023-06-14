@@ -1,12 +1,11 @@
 import React from "react";
-import Logo from '../images/logo-image/logo.jpg';
+import {Link} from "react-router-dom"
 import{ InboxIcon,
         PhoneIcon,
         LocationMarkerIcon,
         LoginIcon,
         UsersIcon,LinkIcon} from '@heroicons/react/outline';
-
-
+import logo from '../images/logo-tharaphi.jpeg';
 import '../Style/Footer.css'
 
 
@@ -14,13 +13,14 @@ import '../Style/Footer.css'
 function Footer(){
     return(
         <div className="cFooterWrapper">
-            {/* <hr /> */}
+            
             <div className="cFooter">
+                <Link to="/">
                 <div className="logox">
-                    <img src={Logo} alt="" />
-                    <span>Biomix</span>
+                    <img src={logo} alt="" />
+                    <span>THERAPIE</span>
                 </div>
-
+                </Link>
                 <div className="block">
                     <div className="detail">
                         <span>Contuct US</span>
@@ -59,9 +59,9 @@ function Footer(){
                         <span>Category</span>
                         <span className="pngLine">
                             <UsersIcon className="icon"/>
-                            <a href="/about">
+                            <Link to="/contact">
                                 <span>About us</span>
-                            </a>
+                            </Link>
                         </span>
                     </div>
                 </div>

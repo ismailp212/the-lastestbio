@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 3fr 1fr ;
     /* margin-top: 100px; */
-    
+
     
 }
 
@@ -20,7 +20,7 @@
     bottom: -10px;
 }
 
-.blueCircle{
+.greenCircle{
     width: 29rem;
     height: 29rem;
     border-radius: 50%;

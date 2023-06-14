@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import '../Style/ProductsFilter.css'
 import { useAutoAnimate } from "@formkit/auto-animate/react"
@@ -44,25 +45,29 @@ function ProductsFilter() {
                         <li onClick={() => filter("Miel")}>Les Miels</li>
                         <li onClick={() => filter("Crème")}>Les Crèmes</li>
                         <li onClick={() => filter("Huile")}>Les Huiles</li>
-                        <li onClick={() => filter("poudre")}>Les poudres</li>
+                        <li onClick={() => filter("Poudre")}>Les Poudres</li>
                     </ul>
                     <div className="list" ref={parent}>
                         {
-                            filteredProducts.map((product, i) => (
-                                <div className="product" key={i}>
-                                    <div className="left-si">
-                                        <div className="name">
-                                            <span>{product.category}</span>
-                                            <span>{product.titre}</span>
-                                        </div>
-                                        <span>{product.actual_price}$</span>
-                                        <div> <a href="">Shop Now</a></div>
+                            filteredProducts.map((product, i) => {
+                                const imagePath = product.image.replace('public/', '');
+
+                                return (
+                                    <div className="product" key={i}>
+                                        <div className="left-si">
+                                            <div className="name">
+                                                <span>{product.category}</span>
+                                                <span>{product.titre}</span>
+                                            </div>
+                                            <span>{product.actual_price}<span className="dh-container">DH</span></span>
+                                            <Link to="/order"><a href="">Shop Now</a></Link>                                        </div>
+                                        <img src={'http://127.0.0.1:8000/storage/'+`${imagePath}`}  alt="" className="img-p" />
                                     </div>
-                                    <img src={product.image} alt="" className="img-p" />
-                                </div>
-                            ))
+                                );
+                            })
                         }
                     </div>
+
                 </div>
             </div>
         </div>

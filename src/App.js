@@ -1,37 +1,36 @@
-// import logo from './logo.svg';
+// import logo from './logo.svg';      
 import './App.css';
-import Slider from './Components/Slider';
-import Header from './Components/Header';
-import Hero from './Components/Hero';
-// import Slider from './Components/Slider';
-import Collections from './Components/Collections';
-import ProductsFilter from './Components/ProductsFilter';
-import SpaSlider from './Components/SpaSlider';
-import Testimonials from './Components/Testimonials';
-import Footer from './Components/Footer';
 import './Style/scroll-bar.css';
-import Tablo from './Components/Tablo';
-import DataTest from './Components/DataTest';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './Components/ScrollToTop';
+import HomePage from './Components/HomePage'
+import ProductList from './Components/ProductList';
+import Services from './Components/Services';
+import Contact from './Components/Contact';
+import OrderForm from './Components/OrderForm';
 function App() {
  
     return (
-      <div className="App">
-        
-     <Header/>
-      <Hero/> 
-      <Collections/>
-      <ProductsFilter/>
-      <SpaSlider/>
-      <Testimonials/>
-      <Footer/>
-      {/* <Tablo/> */}
-      {/* <DataTest/> */}
-      {/* <Slider/> */}
-    </div>
+      <Router>
+        <div className="App">
+         <ScrollToTop/>
+         <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/produits" element={<ProductList />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/order" element={<OrderForm />} />
+        </Routes>
+      </div>
+    </Router>
     );
 }
 
 export default App;
+
+
+
+
 
 
 

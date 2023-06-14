@@ -118,11 +118,14 @@
 
 .name>:nth-child(2){
     font-size: 0.7rem;
+    text-transform: capitalize;
+    z-index: 2;
 }
 
 .left-si>:nth-child(2){
     font-weight: bold;
     font-size: 2rem;
+    z-index: 2;
 }
 
 .left-si>:nth-child(3) a{
@@ -147,10 +150,11 @@
 
 
 .img-p{
-    transform: rotate(-20deg);
+    transform: rotate(-12deg);
     position: absolute;
-    right: 0;
-    width: 30%;
+    right: -40px;
+    width: 75%;
     height: 100%;
-    bottom: -20%;
+    bottom: -10%;
+    z-index: 0;
 } 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../Style/Collections.css';
 
@@ -67,7 +68,7 @@ function Collections() {
                   <div className="product-image">
                     <span className="discount-tag">{discount}% off</span>
                     <img src={`${imagePath}`} className="product-thumb" alt="Collection" />
-                    <button className="card-btn">Ajouter Au Panier</button>
+                    <Link to="/order" ><button className="card-btn">Achetez maintenant</button></Link>
                   </div>
                   <div className="product-info">
                     <h2 className="product-brand">{item.name}</h2>

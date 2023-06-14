@@ -1,23 +1,19 @@
-/* Width and height of the scrollbar track */
 ::-webkit-scrollbar {
     width: 12px;
     height: 16px;
   }
   
-  /* Background color of the scrollbar track */
   ::-webkit-scrollbar-track {
     width: 8px; 
     background-color: #f0f0f0; 
   }
   
-  /* Color of the scrollbar thumb */
   ::-webkit-scrollbar-thumb {
     background-color: #50ac50;
     border-radius: 8px;
     
   }
   
-  /* On hover, the thumb color */
   ::-webkit-scrollbar-thumb:hover {
     background-color: #008b00; 
   }

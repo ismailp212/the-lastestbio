@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link } from 'react-router-dom';
 import '../Style/SpaSlider.css';
 import Spa1 from '../assets/Blue-Minimalist-Quotes-Work-Hard-Desktop-Wallpaper.webp';
 import Spa2 from '../assets/Relaxation-massage-den-haag-1024x576.webp';
@@ -32,10 +33,10 @@ const SpaSlider = () => {
   return (
     <div className="slider-container">
       <div className="slider-overlay">
-        <h2>BIOMIX<span>Spa</span></h2>
+        <h2>ARGAN<span>Spa</span></h2>
         <hr />
         <p>Experience the ultimate relaxation with our professional massage services. Book your appointment today!</p>
-        <button className="reservation-button">Make a Reservation</button>
+        <Link to="/services"><button className="reservation-button">Make a Reservation</button></Link>
       </div>
       <div className="slider-images">
         {images.map((image, index) => (

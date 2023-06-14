@@ -24,7 +24,7 @@ function Hero (){
                 initial={{bottom:"2rem"}}
                 whileInView={{bottom:"1rem"}}
                 transition={transition} 
-                className="blueCircle"
+                className="greenCircle"
                 />
                 <motion.img 
                 transition={transition}
